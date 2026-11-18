@@ -1,0 +1,51 @@
+rank,expected,p_high,level,priority,title,created_at,url
+1,1.81,0.8372,3,important-soon,[Failing Test] pull-kubernetes-unit-windows-master failing on all PRs: VM provisioning can't install OpenSSH (WU error 0x80244022),2026-07-24T06:58:02Z,https://github.com/kubernetes/kubernetes/issues/140900
+2,1.53,0.6309,4,critical-urgent,[Failing-Test]: capz-windows-master is unable to start,2024-11-07T00:38:07Z,https://github.com/kubernetes/kubernetes/issues/128632
+3,1.5,0.5759,4,critical-urgent,Failure cluster [d7f6dc54...] Big spike in Feature:CPUManager / Feature:TopologyManager CI jobs since 3/24,2026-03-27T14:30:26Z,https://github.com/kubernetes/kubernetes/issues/138058
+4,1.49,0.5845,1,backlog,Add Verbose Logging to net/http for Egress Auditing and Rename probe/http/http.go,2025-09-11T20:05:51Z,https://github.com/kubernetes/kubernetes/issues/134025
+5,1.48,0.5899,0,awaiting-more-evidence,Add a confirmation parameter to all k8s API that delete collections.,2024-09-30T06:50:06Z,https://github.com/kubernetes/kubernetes/issues/127746
+6,1.41,0.5558,1,backlog,Kubelet restart triggers UnexpectedAdmissionError for pods using device plugins in both initContainers and containers,2026-04-17T14:53:05Z,https://github.com/kubernetes/kubernetes/issues/138446
+7,1.36,0.5042,3,important-soon,failing device-plugin health checks causing kubelet SIGABRT by systemd watchdog during initialization.,2025-11-04T18:33:02Z,https://github.com/kubernetes/kubernetes/issues/135113
+8,1.34,0.4535,2,important-longterm,"Create a cleaner interface between `cmd/kube-proxy` and `pkg/proxy/{iptables,ipvs,nftables,winkernel}`",2025-12-02T14:03:18Z,https://github.com/kubernetes/kubernetes/issues/135546
+9,1.33,0.4495,2,important-longterm,"Ensure Credential Pulled Images tests still flaking with ""pulled record ... never appeared"" after #138527/#138642 (kubelet-gce-e2e-swap-ubuntu-serial)",2026-07-26T09:18:46Z,https://github.com/kubernetes/kubernetes/issues/140942
+10,1.31,0.4761,0,awaiting-more-evidence,Prestop hook are not being triggered when container in the pod gets restarted,2020-08-08T19:23:27Z,https://github.com/kubernetes/kubernetes/issues/93818
+11,1.29,0.4435,1,backlog,kubelet: containers that fail before ever running don't get exponential CrashLoopBackOff treatment,2026-09-11T11:23:32Z,https://github.com/kubernetes/kubernetes/issues/142032
+12,1.22,0.4139,3,important-soon,Some crashed or OOMKilled containers fail to restart in v1.35,2026-02-10T14:30:17Z,https://github.com/kubernetes/kubernetes/issues/136910
+13,1.21,0.4247,0,awaiting-more-evidence,ReplicaSet do not update latest failure condition into status,2024-09-03T05:04:39Z,https://github.com/kubernetes/kubernetes/issues/127081
+14,1.19,0.4266,4,critical-urgent,Pod status phase misses Pending transition after node reboot,2024-08-13T06:04:41Z,https://github.com/kubernetes/kubernetes/issues/126650
+15,1.17,0.395,4,critical-urgent,kube-controller-manager crashed with fatal error: concurrent map writes,2023-10-08T08:38:27Z,https://github.com/kubernetes/kubernetes/issues/121053
+16,1.1,0.3888,2,important-longterm,Cronjob controller try to get existed job without namespace,2026-02-10T19:13:16Z,https://github.com/kubernetes/kubernetes/issues/136918
+17,1.08,0.3765,1,backlog,Adding link-local ipv6 address to --node-ip makes node have no IP address,2025-02-25T10:04:27Z,https://github.com/kubernetes/kubernetes/issues/130409
+18,1.07,0.341,2,important-longterm,kubelet: DATA RACEs,2026-01-12T16:27:06Z,https://github.com/kubernetes/kubernetes/issues/136179
+19,1.06,0.3425,1,backlog,CPU Manager strict reservation can leave an empty default CPUSet,2026-08-05T14:27:24Z,https://github.com/kubernetes/kubernetes/issues/141196
+20,1.01,0.2889,3,important-soon,Failure cluster [08ffb694...] `StatefulSet` problems in `ci-kubernetes-e2e-kind-alpha-beta-features-canary`,2026-07-24T12:50:31Z,https://github.com/kubernetes/kubernetes/issues/140910
+21,1.01,0.2844,2,important-longterm,Deployment scaleReplicaSetAndRecordEvent vs scaleReplicaSet duplication cleanup is problematic,2025-11-07T11:48:08Z,https://github.com/kubernetes/kubernetes/issues/135222
+22,1.0,0.3225,0,awaiting-more-evidence,Control-plane node failure after transfer pods from one control-plane to another,2024-09-30T11:55:02Z,https://github.com/kubernetes/kubernetes/issues/127755
+23,1.0,0.2944,3,important-soon,[kubelet] Make AllocationManager the source of truth for pod allocations,2026-06-17T23:53:58Z,https://github.com/kubernetes/kubernetes/issues/139831
+24,0.98,0.2984,2,important-longterm,DRA ResourceSlice validation panics on zero validRange.step,2026-06-11T20:24:38Z,https://github.com/kubernetes/kubernetes/issues/139653
+25,0.95,0.3019,2,important-longterm,"ValidatingAdmissionPolicy namespace lookup raced newly created namespaces, produces spurious ""namespace not found"" rejections",2025-11-19T18:01:33Z,https://github.com/kubernetes/kubernetes/issues/135352
+26,0.94,0.3066,4,critical-urgent,kubelet crash: fatal error: concurrent map writes,2024-11-07T02:32:27Z,https://github.com/kubernetes/kubernetes/issues/128638
+27,0.91,0.2095,0,awaiting-more-evidence,[Flaking Tests] multiple jobs - Pod deleted unexpectedly,2023-02-14T16:28:09Z,https://github.com/kubernetes/kubernetes/issues/115767
+28,0.87,0.2107,4,critical-urgent,DRAWorkloadResourceClaims shared ResourceClaimTemplate integration tests sometimes get stuck scheduling Pods,2026-07-06T22:43:47Z,https://github.com/kubernetes/kubernetes/issues/140263
+29,0.86,0.2265,0,awaiting-more-evidence,Expose crypto/tls.Config.KeyLogWriter,2020-08-20T06:37:27Z,https://github.com/kubernetes/kubernetes/issues/94123
+30,0.85,0.2466,4,critical-urgent,The `update-vendor.sh` is broken with `GOPROXY=direct`,2024-09-25T13:58:16Z,https://github.com/kubernetes/kubernetes/issues/127623
+31,0.84,0.2312,0,awaiting-more-evidence,ResourceQuota check for Terminating Pod scope uses wrong field,2025-11-23T15:28:18Z,https://github.com/kubernetes/kubernetes/issues/135411
+32,0.81,0.25,1,backlog,Kubelet shutdown manager not properly initialized due to race condition in systemd-logind configuration reloading,2025-07-22T20:22:28Z,https://github.com/kubernetes/kubernetes/issues/133133
+33,0.8,0.1839,3,important-soon,"[Flaking test] Admission api flaky test in containerd pipelines, uses CPU higher than bound limit",2026-05-09T06:03:53Z,https://github.com/kubernetes/kubernetes/issues/138922
+34,0.79,0.206,3,important-soon,[Flaking Test] E2eNode Suite [It] [sig-node] [DRA] [Feature:DynamicResourceAllocation] Two resource Kubelet Plugins must call NodeUnprepareResources again if it's in progress for one plugin when Kubelet restarts [Serial],2026-09-25T06:23:49Z,https://github.com/kubernetes/kubernetes/issues/142404
+35,0.77,0.2114,1,backlog,Job status shows Running when all pods are Pending,2026-04-14T01:09:22Z,https://github.com/kubernetes/kubernetes/issues/138366
+36,0.74,0.1728,4,critical-urgent,[Failing Test] [sig-node] containerd-node-e2e-1-6/7 are failing,2025-03-05T14:33:56Z,https://github.com/kubernetes/kubernetes/issues/130590
+37,0.73,0.1486,2,important-longterm,[Flaking tests] k8s.io/kubernetes/test/integration/podcertificaterequests.podcertificaterequests,2026-02-21T11:18:26Z,https://github.com/kubernetes/kubernetes/issues/137179
+38,0.66,0.1611,1,backlog,Memory Manager accepts an incomplete pod-level checkpoint as a restored allocation after kubelet restart,2026-09-10T01:18:18Z,https://github.com/kubernetes/kubernetes/issues/141993
+39,0.64,0.1241,2,important-longterm,ci-kubernetes-node-arm64-ubuntu-serial periodically doesn't come up,2026-07-29T17:16:40Z,https://github.com/kubernetes/kubernetes/issues/141036
+40,0.6,0.0982,0,awaiting-more-evidence,Support labeled events in EventRecorder interface,2023-01-12T11:57:34Z,https://github.com/kubernetes/kubernetes/issues/115009
+41,0.59,0.1258,3,important-soon,[Failing Test] [sig-node] [DRA] [Feature:DynamicResourceAllocation] [FeatureGate:DynamicResourceAllocation] Resource Health [FeatureGate:ResourceHealthStatus] [Beta] [Serial],2026-03-04T07:35:07Z,https://github.com/kubernetes/kubernetes/issues/137392
+42,0.59,0.1146,4,critical-urgent,failing test: [sig-scheduling] Workload [FeatureGate:GenericWorkload] [Alpha] [Feature:OffByDefault] CRUD Tests PodGroup API availability,2026-03-19T19:16:24Z,https://github.com/kubernetes/kubernetes/issues/137915
+43,0.59,0.0894,3,important-soon,[FG: InPlacePodVerticalScalingExclusiveCPUs] Add e2e node test(s) with vertical scaling of Guaranteed QoS pods with fractional CPU,2026-07-13T08:11:22Z,https://github.com/kubernetes/kubernetes/issues/140483
+44,0.58,0.0861,1,backlog,Add e2e test for probes using ContainerRestartRules,2025-10-22T22:34:56Z,https://github.com/kubernetes/kubernetes/issues/134799
+45,0.55,0.0645,0,awaiting-more-evidence,auth: request signing,2020-06-26T04:07:22Z,https://github.com/kubernetes/kubernetes/issues/92535
+46,0.54,0.1056,0,awaiting-more-evidence,`kubectl -oyaml -w` should return fully deliminated objects ,2023-04-03T19:12:58Z,https://github.com/kubernetes/kubernetes/issues/117075
+47,0.54,0.0851,4,critical-urgent,[Flake] TestTopologyAwareSchedulingWithBasicPolicy/basic_podgroup_continues_to_schedule_pods_when_more_resources_become_available_(GangScheduling_enabled:_false),2026-03-21T15:37:24Z,https://github.com/kubernetes/kubernetes/issues/137948
+48,0.49,0.0874,3,important-soon,[Failing test] [sig-node] E2eNode Suite: SynchronizedBeforeSuite,2025-09-24T02:46:06Z,https://github.com/kubernetes/kubernetes/issues/134234
+49,0.43,0.0587,2,important-longterm,[Flaking Test] [sig-node] k8s.io/dynamic-resource-allocation.resourceslice,2026-09-21T11:35:46Z,https://github.com/kubernetes/kubernetes/issues/142274
+50,0.42,0.0295,1,backlog,[FG:InPlacePodVerticalScaling] Support memory requests,2025-08-14T21:12:38Z,https://github.com/kubernetes/kubernetes/issues/133539

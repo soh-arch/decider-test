@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>優先度ソート デモ</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FFFFFF;
+    --surface: #FFFFFF;
+    --ink: #1B2321;
+    --muted: #5A6460;
+    --faint: #85908B;
+    --rule: #E3E6E3;
+    --accent-h: 250;          /* 到着の色（優先度の色とは別の色相） */
+    --landed: oklch(0.95 0.03 var(--accent-h));
+    --landed-line: oklch(0.55 0.2 var(--accent-h));
+    --num: "Barlow Semi Condensed", "Zen Kaku Gothic New", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #191919;
+      --surface: #202020;
+      --ink: #E8E8E8;
+      --muted: #AAAAAA;
+      --faint: #7D7D7D;
+      --rule: #333333;
+      --landed: oklch(0.3 0.06 var(--accent-h));
+      --landed-line: oklch(0.7 0.15 var(--accent-h));
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 15px/1.7 "Zen Kaku Gothic New", "Hiragino Sans", sans-serif;
+  }
+
+  /* ---- header ---- */
+  header {
+    position: sticky; top: 0; z-index: 3; background: var(--bg);
+    border-bottom: 1px solid var(--rule);
+  }
+  .bar {
+    max-width: 1080px; margin: 0 auto; padding: 14px 24px;
+    display: flex; align-items: baseline; gap: 18px; flex-wrap: wrap;
+  }
+  h1 { font-size: 18px; font-weight: 700; margin: 0; letter-spacing: .02em; }
+  #status { color: var(--muted); font-size: 14px; }
+  #status b { font-family: var(--num); font-size: 20px; font-weight: 600; color: var(--ink); }
+  .spacer { flex: 1; }
+  button {
+    font: inherit; font-size: 14px; font-weight: 500; padding: 6px 14px; border-radius: 6px; cursor: pointer;
+    border: 1px solid var(--ink); background: transparent; color: var(--ink);
+  }
+  button:hover { background: var(--ink); color: var(--bg); }
+  :focus-visible { outline: 2px solid var(--landed-line); outline-offset: 2px; }
+
+  /* ---- layout ---- */
+  .wrap {
+    max-width: 1080px; margin: 0 auto; padding: 20px 24px 80px;
+    display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 40px; align-items: start;
+  }
+  h2 { font-size: 13px; font-weight: 500; color: var(--muted); margin: 0 0 6px; }
+
+  /* ---- priority list ---- */
+  ol { list-style: none; margin: 0; padding: 0; }
+  #list { border-top: 1px solid var(--rule); }
+  #list > li {
+    position: relative;
+    display: grid; grid-template-columns: 4px 64px minmax(0, 1fr); gap: 14px; align-items: center;
+    padding: 14px 4px; border-bottom: 1px solid var(--rule);
+  }
+  .pct {
+    font-family: var(--num); font-weight: 600; font-size: 44px; line-height: .9;
+    text-align: left; color: var(--c); font-variant-numeric: tabular-nums;
+  }
+  .gauge {                        /* パーセンタイルの目盛り（下から満ちる） */
+    height: 40px; border-radius: 2px;
+    background: linear-gradient(to top, var(--c) var(--w), var(--rule) var(--w));
+  }
+  .time { font-size: 12px; color: var(--faint); font-variant-numeric: tabular-nums; }
+  .text { margin: 2px 0 0; max-width: 40em; }
+  .body { padding: 8px 12px; margin: -8px -12px; border-radius: 6px; }   /* 強調の余白（文字の位置は動かさない） */
+  #list > li.landed > .body { animation: landed 2.6s ease-out; }
+  @keyframes landed {
+    0%, 35% { background: var(--landed); }
+    100%    { background: transparent; }
+  }
+  #list > li.focus > .body { animation: landed 1.6s ease-out; }
+
+  /* ---- arrivals rail ---- */
+  aside {
+    position: sticky; top: 76px;
+    display: flex; flex-direction: column; max-height: calc(100vh - 96px);
+  }
+  #arrivals {
+    border-top: 1px solid var(--rule);
+    flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain;
+  }
+  #arrivals li {
+    display: grid; grid-template-columns: 1fr auto; gap: 2px 10px;
+    padding: 8px 14px 8px 2px; border-bottom: 1px solid var(--rule); cursor: pointer;   /* 右はスクロールバーの分 */
+  }
+  #arrivals li:hover .snip { color: var(--ink); }
+  #arrivals .snip {
+    grid-column: 1 / -1; font-size: 13px; color: var(--muted);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  #arrivals .rank { font-size: 12px; color: var(--muted); }
+  #arrivals .rank b { font-family: var(--num); font-size: 17px; font-weight: 600; color: var(--c, var(--ink)); }
+  #arrivals li.pending { cursor: default; }
+  #arrivals li.pending .rank { color: var(--landed-line); }
+
+  .empty { color: var(--muted); padding: 48px 0; }
+
+  @media (max-width: 760px) {
+    .bar { padding: 12px 16px; gap: 10px 14px; }
+    .wrap { grid-template-columns: 1fr; padding: 16px 16px 60px; gap: 28px; }
+    aside { position: static; order: -1; max-height: none; }
+    #arrivals { overflow: visible; }
+    #arrivals li:nth-child(n+4) { display: none; }
+    #list > li { grid-template-columns: 4px 50px minmax(0, 1fr); gap: 10px; }
+    .pct { font-size: 36px; }
+    .gauge { height: 32px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    #list > li.landed > .body, #list > li.focus > .body { animation: none; background: var(--landed); }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="bar">
+    <h1>問い合わせの優先度ソート</h1>
+    <span id="status">準備しています</span>
+    <span class="spacer"></span>
+    <button id="restart">最初からやり直す</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <main>
+    <h2>優先度パーセンタイル</h2>
+    <ol id="list"></ol>
+    <p class="empty" id="empty">最初の問い合わせが届くのを待っています。</p>
+  </main>
+  <aside>
+    <h2>届いた順</h2>
+    <ol id="arrivals"></ol>
+  </aside>
+</div>
+
+<script>
+const INITIAL = 10;
+const DELAY_MIN = 1000, DELAY_MAX = 2500;
+const dark = matchMedia("(prefers-color-scheme: dark)");
+
+let items = new Map();     // id → 採点済みの案件
+let arrivals = [];         // 到着順の案件
+let rows = new Map();      // id → 優先度リストの行
+let total = 0;
+let run = 0;
+let queue = Promise.resolve();
+
+// 優先度パーセンタイル（0〜100）→ OKLCH。数字とゲージで共通
+// 起点・中継点・終点（[位置, [L, C, h]]）を結んだ道筋を、OKLab の色差が
+// 等間隔になるよう 101 段に割り振る。低い＝くすんだカーキ、中ほど＝琥珀、80 以上＝赤
+const ANCHORS = {
+  light: [[0, [0.72, 0.02, 100]], [0.45, [0.62, 0.07, 80]], [0.70, [0.57, 0.13, 55]], [1, [0.36, 0.14, 26]]],
+  dark:  [[0, [0.50, 0.02, 100]], [0.40, [0.59, 0.07, 80]], [0.70, [0.65, 0.15, 52]], [1, [0.73, 0.165, 14]]],
+};
+
+function evenRamp(anchors, n = 2000) {
+  const at = x => {
+    for (let i = 1; i < anchors.length; i++) {
+      const [x0, c0] = anchors[i - 1], [x1, c1] = anchors[i];
+      if (x <= x1) { const t = (x - x0) / (x1 - x0); return c0.map((v, k) => v + (c1[k] - v) * t); }
+    }
+    return anchors.at(-1)[1];
+  };
+  const lab = ([L, C, h]) => [L, C * Math.cos(h * Math.PI / 180), C * Math.sin(h * Math.PI / 180)];
+  const pts = Array.from({ length: n + 1 }, (_, i) => at(i / n));
+  const cum = [0];
+  for (let i = 1; i <= n; i++) {
+    const a = lab(pts[i - 1]), b = lab(pts[i]);
+    cum.push(cum[i - 1] + Math.hypot(a[0] - b[0], a[1] - b[1], a[2] - b[2]));
+  }
+  const table = [];
+  for (let p = 0, i = 0; p <= 100; p++) {
+    const target = cum[n] * p / 100;
+    while (i < n && cum[i] < target) i++;
+    table.push(pts[i]);
+  }
+  return table;
+}
+const RAMPS = { light: evenRamp(ANCHORS.light), dark: evenRamp(ANCHORS.dark) };
+
+function color(pct) {
+  const [L, C, h] = RAMPS[dark.matches ? "dark" : "light"][Math.round(Math.min(Math.max(pct, 0), 100))];
+  return `oklch(${L.toFixed(3)} ${C.toFixed(3)} ${h.toFixed(1)})`;
+}
+
+const fmt = d => d.toLocaleTimeString("ja-JP", { hour12: false });
+
+function sorted() {
+  return [...items.values()].sort((a, b) => b.expected - a.expected || b.p_high - a.p_high);
+}
+
+function makeRow(it) {
+  const li = document.createElement("li");
+  li.id = "case-" + it.id;
+  li.innerHTML = `<div class="gauge"></div><div class="pct"></div><div class="body"><span class="time"></span><p class="text"></p></div>`;
+  li.querySelector(".text").textContent = it.text;
+  li.querySelector(".time").textContent = fmt(it.arrived) + " 着";
+  return li;
+}
+
+function render(newId) {
+  const list = document.getElementById("list");
+  const order = sorted();
+  document.getElementById("empty").style.display = order.length ? "none" : "";
+
+  order.forEach((it, i) => {
+    let li = rows.get(it.id);
+    if (!li) { li = makeRow(it); rows.set(it.id, li); }
+    const pct = Math.round(it.percentile);
+    li.style.setProperty("--c", color(it.percentile));
+    li.style.setProperty("--w", pct + "%");
+    li.querySelector(".pct").textContent = pct;
+    if (list.children[i] !== li) list.insertBefore(li, list.children[i] || null);
+  });
+
+  if (newId && rows.has(newId)) {
+    const li = rows.get(newId);
+    li.classList.remove("landed"); void li.offsetWidth; li.classList.add("landed");
+  }
+  renderArrivals(order);
+  renderStatus();
+}
+
+function renderArrivals(order) {
+  const rank = new Map(order.map((it, i) => [it.id, i + 1]));
+  const rail = document.getElementById("arrivals");
+  rail.replaceChildren(...arrivals.slice().reverse().map(a => {
+    const li = document.createElement("li");
+    const it = items.get(a.id);
+    li.innerHTML = `<span class="time"></span><span class="rank"></span><span class="snip"></span>`;
+    li.querySelector(".time").textContent = fmt(a.arrived);
+    li.querySelector(".snip").textContent = a.text;
+    if (it) {
+      li.style.setProperty("--c", color(it.percentile));
+      li.querySelector(".rank").innerHTML = `<b>${rank.get(a.id)}</b> 位`;
+      li.tabIndex = 0;
+      const go = () => focusRow(a.id);
+      li.addEventListener("click", go);
+      li.addEventListener("keydown", e => { if (e.key === "Enter") go(); });
+    } else {
+      li.className = "pending";
+      li.querySelector(".rank").textContent = "採点中";
+    }
+    return li;
+  }));
+}
+
+function focusRow(id) {
+  const li = rows.get(id);
+  if (!li) return;
+  const smooth = !matchMedia("(prefers-reduced-motion: reduce)").matches;
+  li.scrollIntoView({ behavior: smooth ? "smooth" : "auto", block: "center" });
+  li.classList.remove("landed", "focus"); void li.offsetWidth; li.classList.add("focus");
+}
+
+function renderStatus() {
+  const pending = arrivals.length - items.size;
+  document.getElementById("status").innerHTML =
+    `<b>${items.size}</b> / ${total} 件を採点済み` + (pending > 0 ? `（採点中 ${pending} 件）` : "");
+}
+
+// initial：開始時にまとめて届く分は強調しない
+function arrive(c, myRun, initial = false) {
+  const a = { ...c, arrived: new Date() };
+  arrivals.push(a);
+  renderArrivals(sorted());
+  renderStatus();
+  queue = queue.then(async () => {
+    if (myRun !== run) return;
+    const r = await fetch("/api/score", {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text: c.text }),
+    }).then(res => res.json());
+    if (myRun !== run) return;
+    items.set(a.id, { ...a, ...r });
+    render(initial ? null : a.id);
+  });
+}
+
+async function start() {
+  const myRun = ++run;
+  items = new Map(); arrivals = []; rows = new Map();
+  document.getElementById("list").replaceChildren();
+  render();
+  const data = await fetch("/api/cases").then(r => r.json());
+  const cases = data.cases.map(c => ({ ...c, id: String(c.id) }));
+  for (let i = cases.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [cases[i], cases[j]] = [cases[j], cases[i]];
+  }
+  total = cases.length;
+  renderStatus();
+  cases.slice(0, INITIAL).forEach(c => arrive(c, myRun, true));
+  let wait = 0;
+  for (const c of cases.slice(INITIAL)) {
+    wait += DELAY_MIN + Math.random() * (DELAY_MAX - DELAY_MIN);
+    setTimeout(() => { if (myRun === run) arrive(c, myRun); }, wait);
+  }
+}
+
+document.getElementById("restart").addEventListener("click", start);
+dark.addEventListener("change", () => render());
+
+start().catch(() => {
+  document.getElementById("status").textContent =
+    "サーバーに接続できません。demo_server.py を起動してから再読み込みしてください。";
+});
+</script>
+</body>
+</html>

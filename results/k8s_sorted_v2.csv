@@ -1,0 +1,51 @@
+id,level,priority,is_test,A 緊急度（日本語3段階）,B 公式の優先度定義（英語5段階）,title
+92535,0,awaiting-more-evidence,False,0.234,0.46,auth: request signing
+93818,0,awaiting-more-evidence,False,0.447,0.61,Prestop hook are not being triggered when container in the pod gets restarted
+94123,0,awaiting-more-evidence,False,0.428,0.582,Expose crypto/tls.Config.KeyLogWriter
+115009,0,awaiting-more-evidence,False,0.32,0.528,Support labeled events in EventRecorder interface
+115767,0,awaiting-more-evidence,True,0.487,0.513,[Flaking Tests] multiple jobs - Pod deleted unexpectedly
+117075,0,awaiting-more-evidence,False,0.342,0.564,`kubectl -oyaml -w` should return fully deliminated objects 
+121053,4,critical-urgent,False,0.786,0.682,kube-controller-manager crashed with fatal error: concurrent map writes
+126650,4,critical-urgent,False,0.379,0.586,Pod status phase misses Pending transition after node reboot
+127081,0,awaiting-more-evidence,False,0.487,0.565,ReplicaSet do not update latest failure condition into status
+127623,4,critical-urgent,False,0.566,0.544,The `update-vendor.sh` is broken with `GOPROXY=direct`
+127746,0,awaiting-more-evidence,False,0.596,0.62,Add a confirmation parameter to all k8s API that delete collections.
+127755,0,awaiting-more-evidence,False,0.778,0.686,Control-plane node failure after transfer pods from one control-plane to another
+128632,4,critical-urgent,True,0.593,0.573,[Failing-Test]: capz-windows-master is unable to start
+128638,4,critical-urgent,False,0.67,0.571,kubelet crash: fatal error: concurrent map writes
+130409,1,backlog,False,0.553,0.596,Adding link-local ipv6 address to --node-ip makes node have no IP address
+130590,4,critical-urgent,True,0.558,0.554,[Failing Test] [sig-node] containerd-node-e2e-1-6/7 are failing
+133133,1,backlog,False,0.46,0.531,Kubelet shutdown manager not properly initialized due to race condition in systemd-logind configuration reloading
+133539,1,backlog,False,0.168,0.329,[FG:InPlacePodVerticalScaling] Support memory requests
+134025,1,backlog,False,0.532,0.635,Add Verbose Logging to net/http for Egress Auditing and Rename probe/http/http.go
+134234,3,important-soon,True,0.426,0.515,[Failing test] [sig-node] E2eNode Suite: SynchronizedBeforeSuite
+134799,1,backlog,False,0.512,0.574,Add e2e test for probes using ContainerRestartRules
+135113,3,important-soon,True,0.684,0.613,failing device-plugin health checks causing kubelet SIGABRT by systemd watchdog during initialization.
+135222,2,important-longterm,False,0.555,0.571,Deployment scaleReplicaSetAndRecordEvent vs scaleReplicaSet duplication cleanup is problematic
+135352,2,important-longterm,False,0.415,0.526,"ValidatingAdmissionPolicy namespace lookup raced newly created namespaces, produces spurious ""namespace not found"" rejections"
+135411,0,awaiting-more-evidence,False,0.258,0.476,ResourceQuota check for Terminating Pod scope uses wrong field
+135546,2,important-longterm,False,0.424,0.577,"Create a cleaner interface between `cmd/kube-proxy` and `pkg/proxy/{iptables,ipvs,nftables,winkernel}`"
+136179,2,important-longterm,False,0.534,0.564,kubelet: DATA RACEs
+136910,3,important-soon,False,0.54,0.548,Some crashed or OOMKilled containers fail to restart in v1.35
+136918,2,important-longterm,False,0.425,0.558,Cronjob controller try to get existed job without namespace
+137179,2,important-longterm,True,0.41,0.482,[Flaking tests] k8s.io/kubernetes/test/integration/podcertificaterequests.podcertificaterequests
+137392,3,important-soon,True,0.519,0.586,[Failing Test] [sig-node] [DRA] [Feature:DynamicResourceAllocation] [FeatureGate:DynamicResourceAllocation] Resource Health [FeatureGate:ResourceHealthStatus] [Beta] [Serial]
+137915,4,critical-urgent,True,0.379,0.535,failing test: [sig-scheduling] Workload [FeatureGate:GenericWorkload] [Alpha] [Feature:OffByDefault] CRUD Tests PodGroup API availability
+137948,4,critical-urgent,True,0.338,0.527,[Flake] TestTopologyAwareSchedulingWithBasicPolicy/basic_podgroup_continues_to_schedule_pods_when_more_resources_become_available_(GangScheduling_enabled:_false)
+138058,4,critical-urgent,True,0.595,0.566,Failure cluster [d7f6dc54...] Big spike in Feature:CPUManager / Feature:TopologyManager CI jobs since 3/24
+138366,1,backlog,False,0.322,0.617,Job status shows Running when all pods are Pending
+138446,1,backlog,False,0.553,0.591,Kubelet restart triggers UnexpectedAdmissionError for pods using device plugins in both initContainers and containers
+138922,3,important-soon,True,0.57,0.554,"[Flaking test] Admission api flaky test in containerd pipelines, uses CPU higher than bound limit"
+139653,2,important-longterm,False,0.613,0.641,DRA ResourceSlice validation panics on zero validRange.step
+139831,3,important-soon,False,0.451,0.56,[kubelet] Make AllocationManager the source of truth for pod allocations
+140263,4,critical-urgent,False,0.474,0.555,DRAWorkloadResourceClaims shared ResourceClaimTemplate integration tests sometimes get stuck scheduling Pods
+140483,3,important-soon,False,0.338,0.573,[FG: InPlacePodVerticalScalingExclusiveCPUs] Add e2e node test(s) with vertical scaling of Guaranteed QoS pods with fractional CPU
+140900,3,important-soon,True,0.711,0.637,[Failing Test] pull-kubernetes-unit-windows-master failing on all PRs: VM provisioning can't install OpenSSH (WU error 0x80244022)
+140910,3,important-soon,True,0.587,0.539,Failure cluster [08ffb694...] `StatefulSet` problems in `ci-kubernetes-e2e-kind-alpha-beta-features-canary`
+140942,2,important-longterm,True,0.366,0.458,"Ensure Credential Pulled Images tests still flaking with ""pulled record ... never appeared"" after #138527/#138642 (kubelet-gce-e2e-swap-ubuntu-serial)"
+141036,2,important-longterm,False,0.463,0.55,ci-kubernetes-node-arm64-ubuntu-serial periodically doesn't come up
+141196,1,backlog,False,0.584,0.637,CPU Manager strict reservation can leave an empty default CPUSet
+141993,1,backlog,False,0.405,0.59,Memory Manager accepts an incomplete pod-level checkpoint as a restored allocation after kubelet restart
+142032,1,backlog,False,0.5,0.609,kubelet: containers that fail before ever running don't get exponential CrashLoopBackOff treatment
+142274,2,important-longterm,True,0.343,0.485,[Flaking Test] [sig-node] k8s.io/dynamic-resource-allocation.resourceslice
+142404,3,important-soon,True,0.421,0.518,[Flaking Test] E2eNode Suite [It] [sig-node] [DRA] [Feature:DynamicResourceAllocation] Two resource Kubelet Plugins must call NodeUnprepareResources again if it's in progress for one plugin when Kubelet restarts [Serial]

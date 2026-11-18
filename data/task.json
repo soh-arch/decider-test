@@ -1,0 +1,22 @@
+{
+  "department": {
+    "type": "choice",
+    "instructions": "この問い合わせを対応すべきチームはどれ？",
+    "criteria": {
+      "billing": "請求・支払い方法・二重請求・返金の処理状況",
+      "shipping": "配送状況・遅延・誤配送・配送日時の変更",
+      "returns": "商品の返品・交換・不良品や破損の受付",
+      "account": "ログイン・パスワード・会員情報・退会・不正アクセス",
+      "other": "上記のどれにも当てはまらない質問"
+    }
+  },
+  "refund_requested": {
+    "type": "noul",
+    "instructions": "顧客は返金をはっきり求めている？"
+  },
+  "urgency": {
+    "type": "score",
+    "instructions": "この問い合わせの緊急度は？",
+    "criteria": ["低い：急ぎではない", "中くらい：数日以内に対応", "高い：今すぐ対応が必要"]
+  }
+}
