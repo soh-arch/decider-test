@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="648" viewBox="0 0 560 324" font-family="'Hiragino Sans','Hiragino Kaku Gothic ProN',sans-serif">
+<rect width="560" height="324" fill="#F7F3ED"/>
+<line x1="280.5" y1="20" x2="280.5" y2="306" stroke="#D8D3CB" stroke-width="1"/>
+<text x="14" y="34" font-size="13" font-weight="600" fill="#231E16">いま並んでいる案件どうしで比べる</text>
+<text x="14" y="70" font-size="11" fill="#534C41">処理前</text>
+<text x="154" y="70" font-size="11" fill="#534C41">2件処理後</text>
+<path d="M136.0 66 H148.0 M144.0 62 L148.0 66 L144.0 70" fill="none" stroke="#908A80" stroke-width="1"/>
+<rect x="14.5" y="84.5" width="115" height="31" rx="4" fill="none" stroke="#D8D3CB" stroke-width="1"/>
+<rect x="22" y="90" width="3" height="20" rx="1" fill="#E4DFD6"/>
+<rect x="22" y="92.40" width="3" height="17.60" rx="1" fill="#84210E"/>
+<text x="29" y="106" font-size="16" font-weight="700" fill="#84210E">88</text>
+<text x="58" y="104" font-size="11" fill="#231E16">サーバー停止</text>
+<rect x="154.5" y="84.5" width="115" height="31" rx="4" fill="none" stroke="#B5B0A7" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="166" y="104" font-size="11" fill="#736D62">処理済み</text>
+<rect x="14.5" y="142.5" width="115" height="31" rx="4" fill="none" stroke="#D8D3CB" stroke-width="1"/>
+<rect x="22" y="148" width="3" height="20" rx="1" fill="#E4DFD6"/>
+<rect x="22" y="155.40" width="3" height="12.60" rx="1" fill="#A14811"/>
+<text x="29" y="164" font-size="16" font-weight="700" fill="#A14811">63</text>
+<text x="58" y="162" font-size="11" fill="#231E16">二重請求</text>
+<rect x="154.5" y="142.5" width="115" height="31" rx="4" fill="none" stroke="#B5B0A7" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="166" y="162" font-size="11" fill="#736D62">処理済み</text>
+<rect x="14.5" y="200.5" width="115" height="31" rx="4" fill="none" stroke="#D8D3CB" stroke-width="1"/>
+<rect x="22" y="206" width="3" height="20" rx="1" fill="#E4DFD6"/>
+<rect x="22" y="218.40" width="3" height="7.60" rx="1" fill="#A77034"/>
+<text x="29" y="222" font-size="16" font-weight="700" fill="#A77034">38</text>
+<text x="58" y="220" font-size="11" fill="#231E16">配送日の変更</text>
+<rect x="154.75" y="200.75" width="114.5" height="30.5" rx="4" fill="none" stroke="#231E16" stroke-width="1.5"/>
+<rect x="162" y="206" width="3" height="20" rx="1" fill="#E4DFD6"/>
+<rect x="162" y="211.00" width="3" height="15.00" rx="1" fill="#93360E"/>
+<text x="169" y="222" font-size="16" font-weight="700" fill="#93360E">75</text>
+<text x="198" y="220" font-size="11" fill="#231E16">配送日の変更</text>
+<text x="270" y="247" font-size="13" font-weight="700" fill="#231E16" text-anchor="end">38 → 75</text>
+<rect x="14.5" y="258.5" width="115" height="31" rx="4" fill="none" stroke="#D8D3CB" stroke-width="1"/>
+<rect x="22" y="264" width="3" height="20" rx="1" fill="#E4DFD6"/>
+<rect x="22" y="281.40" width="3" height="2.60" rx="1" fill="#A09577"/>
+<text x="29" y="280" font-size="16" font-weight="700" fill="#A09577">13</text>
+<text x="58" y="278" font-size="11" fill="#231E16">ポイント期限</text>
+<rect x="154.75" y="258.75" width="114.5" height="30.5" rx="4" fill="none" stroke="#231E16" stroke-width="1.5"/>
+<rect x="162" y="264" width="3" height="20" rx="1" fill="#E4DFD6"/>
+<rect x="162" y="279.00" width="3" height="5.00" rx="1" fill="#9D8459"/>
+<text x="169" y="280" font-size="16" font-weight="700" fill="#9D8459">25</text>
+<text x="198" y="278" font-size="11" fill="#231E16">ポイント期限</text>
+<text x="270" y="305" font-size="13" font-weight="700" fill="#231E16" text-anchor="end">13 → 25</text>
+<text x="290" y="34" font-size="13" font-weight="600" fill="#231E16">処理済みの案件と比べる</text>
+<text x="290" y="70" font-size="11" fill="#534C41">処理前</text>
+<text x="430" y="70" font-size="11" fill="#534C41">2件処理後</text>
+<path d="M412.0 66 H424.0 M420.0 62 L424.0 66 L420.0 70" fill="none" stroke="#908A80" stroke-width="1"/>
+<rect x="290.5" y="84.5" width="115" height="31" rx="4" fill="none" stroke="#D8D3CB" stroke-width="1"/>
+<rect x="298" y="90" width="3" height="20" rx="1" fill="#E4DFD6"/>
+<rect x="298" y="90.80" width="3" height="19.20" rx="1" fill="#7B120F"/>
+<text x="305" y="106" font-size="16" font-weight="700" fill="#7B120F">96</text>
+<text x="334" y="104" font-size="11" fill="#231E16">サーバー停止</text>
+<rect x="430.5" y="84.5" width="115" height="31" rx="4" fill="none" stroke="#B5B0A7" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="442" y="104" font-size="11" fill="#736D62">処理済み</text>
+<rect x="290.5" y="142.5" width="115" height="31" rx="4" fill="none" stroke="#D8D3CB" stroke-width="1"/>
+<rect x="298" y="148" width="3" height="20" rx="1" fill="#E4DFD6"/>
+<rect x="298" y="152.00" width="3" height="16.00" rx="1" fill="#8E2E0E"/>
+<text x="305" y="164" font-size="16" font-weight="700" fill="#8E2E0E">80</text>
+<text x="334" y="162" font-size="11" fill="#231E16">二重請求</text>
+<rect x="430.5" y="142.5" width="115" height="31" rx="4" fill="none" stroke="#B5B0A7" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="442" y="162" font-size="11" fill="#736D62">処理済み</text>
+<rect x="290.5" y="200.5" width="115" height="31" rx="4" fill="none" stroke="#D8D3CB" stroke-width="1"/>
+<rect x="298" y="206" width="3" height="20" rx="1" fill="#E4DFD6"/>
+<rect x="298" y="217.60" width="3" height="8.40" rx="1" fill="#AB6A29"/>
+<text x="305" y="222" font-size="16" font-weight="700" fill="#AB6A29">42</text>
+<text x="334" y="220" font-size="11" fill="#231E16">配送日の変更</text>
+<rect x="430.5" y="200.5" width="115" height="31" rx="4" fill="none" stroke="#D8D3CB" stroke-width="1"/>
+<rect x="438" y="206" width="3" height="20" rx="1" fill="#E4DFD6"/>
+<rect x="438" y="217.60" width="3" height="8.40" rx="1" fill="#AB6A29"/>
+<text x="445" y="222" font-size="16" font-weight="700" fill="#AB6A29">42</text>
+<text x="474" y="220" font-size="11" fill="#231E16">配送日の変更</text>
+<text x="546" y="247" font-size="13" font-weight="700" fill="#231E16" text-anchor="end">42 → 42</text>
+<rect x="290.5" y="258.5" width="115" height="31" rx="4" fill="none" stroke="#D8D3CB" stroke-width="1"/>
+<rect x="298" y="264" width="3" height="20" rx="1" fill="#E4DFD6"/>
+<rect x="298" y="282.00" width="3" height="2.00" rx="1" fill="#A1997E"/>
+<text x="305" y="280" font-size="16" font-weight="700" fill="#A1997E">10</text>
+<text x="334" y="278" font-size="11" fill="#231E16">ポイント期限</text>
+<rect x="430.5" y="258.5" width="115" height="31" rx="4" fill="none" stroke="#D8D3CB" stroke-width="1"/>
+<rect x="438" y="264" width="3" height="20" rx="1" fill="#E4DFD6"/>
+<rect x="438" y="282.00" width="3" height="2.00" rx="1" fill="#A1997E"/>
+<text x="445" y="280" font-size="16" font-weight="700" fill="#A1997E">10</text>
+<text x="474" y="278" font-size="11" fill="#231E16">ポイント期限</text>
+<text x="546" y="305" font-size="13" font-weight="700" fill="#231E16" text-anchor="end">10 → 10</text>
+</svg>

@@ -7,7 +7,6 @@ __pycache__/
 # Local only
 test_decider.py
 docs/figures.md
-docs/images/src/
 data/k8s_issues.csv
 data/k8s_issues_100.csv
 percentile/

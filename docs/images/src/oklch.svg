@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="312" viewBox="0 0 400 156" font-family="'Hiragino Sans','Hiragino Kaku Gothic ProN',sans-serif">
+<rect width="400" height="156" fill="#F7F3ED"/>
+<text x="20" y="41" font-size="12" fill="#231E16">HSL</text>
+<rect x="76" y="20" width="34" height="34" fill="#D92626"/><!-- hsl(0, 70%, 50%) -->
+<rect x="114" y="20" width="34" height="34" fill="#D9AC26"/><!-- hsl(45, 70%, 50%) -->
+<rect x="152" y="20" width="34" height="34" fill="#80D926"/><!-- hsl(90, 70%, 50%) -->
+<rect x="190" y="20" width="34" height="34" fill="#26D953"/><!-- hsl(135, 70%, 50%) -->
+<rect x="228" y="20" width="34" height="34" fill="#26D9D9"/><!-- hsl(180, 70%, 50%) -->
+<rect x="266" y="20" width="34" height="34" fill="#2653D9"/><!-- hsl(225, 70%, 50%) -->
+<rect x="304" y="20" width="34" height="34" fill="#7F26D9"/><!-- hsl(270, 70%, 50%) -->
+<rect x="342" y="20" width="34" height="34" fill="#D926AC"/><!-- hsl(315, 70%, 50%) -->
+<text x="20" y="83" font-size="12" fill="#231E16">OKLCH</text>
+<rect x="76" y="62" width="34" height="34" fill="#DA7D9B"/><!-- oklch(0.70 0.12 0) -->
+<rect x="114" y="62" width="34" height="34" fill="#DC855D"/><!-- oklch(0.70 0.12 45) -->
+<rect x="152" y="62" width="34" height="34" fill="#BB9B39"/><!-- oklch(0.70 0.12 90) -->
+<rect x="190" y="62" width="34" height="34" fill="#7DAF61"/><!-- oklch(0.70 0.12 135) -->
+<rect x="228" y="62" width="34" height="34" fill="#24B6A1"/><!-- oklch(0.70 0.12 180) -->
+<rect x="266" y="62" width="34" height="34" fill="#30ADD6"/><!-- oklch(0.70 0.12 225) -->
+<rect x="304" y="62" width="34" height="34" fill="#819AE9"/><!-- oklch(0.70 0.12 270) -->
+<rect x="342" y="62" width="34" height="34" fill="#BA87D2"/><!-- oklch(0.70 0.12 315) -->
+<text x="76" y="122" font-size="11" fill="#736D62">同じ明るさの値でも、HSL は色ごとに明るさがばらつき、</text>
+<text x="76" y="139" font-size="11" fill="#736D62">OKLCH はそろって見える</text>
+</svg>
