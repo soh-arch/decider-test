@@ -189,6 +189,7 @@ def v1(cls, groups, band=True, summary=False):
     for (name, vals), cy, yo in zip(groups, rows_y, ys):
         fill, weight = label_style(name)
         svg.text(x0 - R - 14, cy, name, fill=fill, weight=weight, anchor="end", baseline="central")
+        svg.line(x0 + min(vals) * (x1 - x0), cy, x0 + max(vals) * (x1 - x0), cy, LINE_M, 1)
         if summary:
             q1, med, q3 = (quantile(vals, q) for q in (0.25, 0.5, 0.75))
             own = max(abs(y) for y in yo) + R + 4
