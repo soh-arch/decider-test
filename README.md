@@ -25,7 +25,7 @@ percentile-ranked triage は、System One model（短時間かつ低コストで
 
 2026年9月、TypeSafe が System One model の Jev を公開しました。Jev に「『雪だるまを作った』の季節は、春・夏・秋・冬のどれか」と尋ねると、「冬 62%、秋 20%、春 12%、夏 7%」のように、選択肢ごとの確率で答えることができます。
 
-<img src="docs/images/answer_example.png" width="336" alt="「雪だるまを作った」の季節への Jev の答え（冬 62%、秋 20%、春 12%、夏 7%）">
+<img src="docs/images/answer_example.png" width="336" alt="「雪だるまを作った」の季節への Jev の答え（春 12%、夏 7%、秋 20%、冬 62%）">
 
 確率がすぐに返ってくるので、大量の案件を、急ぐ順に並べるのに使えるのではないかと考え、オープンウェイトの System One model である decider（0.8b・2b・4b）を手元の PC で動かして、確かめることにしました。
 
