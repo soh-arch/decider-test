@@ -1,8 +1,8 @@
 # デモ
 
-percentile-ranked triage を画面で確かめるために作ったデモです。再利用を前提には作っていません。
+percentile-ranked triage を画面で確かめるために作ったデモです。
 
-次の環境で動かしました：M5 MacBook Air 24GB（MPS）、Python 3.12、decider-ai 1.5.0。Mac（MPS）を前提にしたコードなので、ほかの環境で動かす場合は注意してください。
+次の環境で動かしました：M5 MacBook Air 24GB（MPS）、Python 3.12、decider-ai 1.5.0。
 
 ```bash
 pip install decider-ai==1.5.0 torch
